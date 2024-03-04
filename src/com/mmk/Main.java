@@ -20,6 +20,19 @@ public class Main {
 
         linkedList.display();
 
+        System.out.println(linkedList.deleteFirst());
+
+        linkedList.display();
+
+        System.out.println(linkedList.deleteLast());
+
+        linkedList.display();
+
+        System.out.println(linkedList.delete(2));
+
+        linkedList.display();
+
+
 
     }
 }

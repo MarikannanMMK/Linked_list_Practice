@@ -45,7 +45,7 @@ public class LL {
             temp = temp.next;
         }
         System.out.println("END");
-        System.out.print("Size of the linked list = " + size);
+        System.out.println("Size of the linked list = " + size);
 
     }
 
@@ -66,11 +66,11 @@ public class LL {
 
     public void insertPosition(int position, int val) {
 
-        if(size == 0){
+        if (size == 0) {
             insert_first(val);
             return;
         }
-        if(size == position){
+        if (size == position) {
             insert_Last(val);
             return;
         }
@@ -81,7 +81,58 @@ public class LL {
         }
         Node newnode = new Node(val, temp.next);
         temp.next = newnode;
-        size+=1;
+        size += 1;
+
+    }
+
+    public int deleteFirst() {
+
+        int value = head.val;
+        head = head.next;
+        if (head == null) {
+            tail = null;
+        }
+        size--;
+        return value;
+
+
+    }
+
+    public int deleteLast() {
+
+        int val = tail.val;
+        Node node = get(size - 2);
+        node.next = null;
+        tail = node;
+        size--;
+        return val;
+
+    }
+
+
+    public Node get(int index) {
+        Node temp = head;
+
+        for (int i = 0; i < index; i++) {
+            temp = temp.next;
+        }
+        return temp;
+    }
+
+    public int delete(int index){
+
+        if (index == 0 ){
+            return  deleteFirst();
+        }
+        if (index == size -1){
+            return  deleteLast();
+        }
+
+        Node prev = get(index-1);
+        int val  = prev.next.val;
+        prev.next = prev.next.next;
+        size--;
+        return val;
 
     }
 
