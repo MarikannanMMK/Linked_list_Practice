@@ -119,21 +119,33 @@ public class LL {
         return temp;
     }
 
-    public int delete(int index){
+    public int delete(int index) {
 
-        if (index == 0 ){
-            return  deleteFirst();
+        if (index == 0) {
+            return deleteFirst();
         }
-        if (index == size -1){
-            return  deleteLast();
+        if (index == size - 1) {
+            return deleteLast();
         }
 
-        Node prev = get(index-1);
-        int val  = prev.next.val;
+        Node prev = get(index - 1);
+        int val = prev.next.val;
         prev.next = prev.next.next;
         size--;
         return val;
 
+    }
+
+
+    public Node find(int value) {
+        Node temp = head;
+        while (temp != null) {
+            if (temp.val == value) {
+                return temp;
+            }
+            temp = temp.next;
+        }
+        return null;
     }
 
 }
