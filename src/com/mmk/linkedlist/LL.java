@@ -1,4 +1,4 @@
-package com.mmk;
+package com.mmk.linkedlist;
 
 public class LL {
 
