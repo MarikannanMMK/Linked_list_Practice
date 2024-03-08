@@ -1,4 +1,4 @@
-package com.mmk;
+package com.mmk.linkedlist;
 
 public class DLL {
 
@@ -53,15 +53,15 @@ public class DLL {
 
     }
 
-    public void insertAfterValue(int nodeVal , int val){
+    public void insertAfterValue(int nodeVal, int val) {
         Node node = new Node(val);
         Node temp = head;
-        while(temp!=null){
-            if(temp.val == nodeVal){
+        while (temp != null) {
+            if (temp.val == nodeVal) {
                 node.prev = temp;
                 node.next = temp.next;
                 temp.next = node;
-                if(node.next != null){
+                if (node.next != null) {
                     node.next.prev = node;
                 }
             }
