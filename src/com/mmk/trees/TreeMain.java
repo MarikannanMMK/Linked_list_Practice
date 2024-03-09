@@ -9,5 +9,11 @@ public class TreeMain {
         bt.populate(sc);
         bt.display();
         bt.prettyDisplay();
+
+        BST bst = new BST();
+        int[] input = {1,2,3,4,5,6,7,8,9,10,11};
+        bst.populatedSorted(input);
+        bst.display();
+
     }
 }
